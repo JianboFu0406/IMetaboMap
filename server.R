@@ -6,13 +6,19 @@ library(shinydashboard)
 
 shinyServer(function(input, output, session) {
   
-  load('./fg.shiny.rda')
-  load('./bcg.shiny.rda')
-  load('./tan.shiny.rda')
+  load('./fg.shiny.bmi.rda')
+  load('./bcg.shiny.adj.rda')
+  load('./tan.shiny.bmi.rda')
   
-  load('./fg.sex.shiny.rda')
-  load('./bcg.sex.shiny.rda')
-  load('./tan.sex.shiny.rda')
+  load('./fg.sex.adj.shiny.rda')
+  load('./bcg.sex.shiny.fdr.rda')
+  load('./tan.sex.fdr.shiny.rda')
+  
+  load('./fg.sex.Diff.Z.shiny.rda')
+  load('./bcg.sex.diff.z.shiny.rda')
+  load('./tan.diff.z.shiny1.rda')
+  
+  load('meta_result_shiny.rda')
   
   load('./my.bcg.metabolites.rda')
   row.names(fg.shiny1) <- NULL
@@ -22,6 +28,11 @@ shinyServer(function(input, output, session) {
   row.names(tan.sex.shiny) <- NULL
   row.names(bcg.sex.shiny) <- NULL
   row.names(fg.sex.shiny) <- NULL
+  
+  row.names(fg.sex.diff.z.shiny) <- NULL
+  row.names(bcg.sex.diff.z.shiny) <- NULL
+  row.names(tan.diff.z.shiny1) <- NULL
+  
   
   row.names(my.bcg) <- NULL
   
@@ -100,8 +111,21 @@ shinyServer(function(input, output, session) {
   
   DTProxy7 <- dataTableProxy("DT7")
   
-  output$DT5 = renderDT(my.bcg,options = list(scrollX = TRUE))
+  output$DT5 = renderDT(my.bcg,options = list(scrollX = TRUE), rownames = FALSE)
   DTProxy5 <- dataTableProxy("DT5")
+  
+  output$DT8 = renderDT(meta_df1,options = list(scrollX = TRUE), rownames = FALSE)
+  DTProxy8 <- dataTableProxy("DT8")
+  
+  output$DT9 = renderDT(fg.sex.diff.z.shiny,options = list(scrollX = TRUE), rownames = FALSE)
+  DTProxy9 <- dataTableProxy("DT9")
+  
+  output$DT10 = renderDT(bcg.sex.diff.z.shiny,options = list(scrollX = TRUE), rownames = FALSE)
+  DTProxy10 <- dataTableProxy("DT10")
+
+  output$DT11 = renderDT(tan.diff.z.shiny1,options = list(scrollX = TRUE), rownames = FALSE)
+  DTProxy11 <- dataTableProxy("DT11")
+  
   
   observeEvent(c(input$search, input$tabsetPanelID), {
     updateSearch(DTProxy1, keywords = list(global = input$search, columns = NULL))
@@ -111,6 +135,7 @@ shinyServer(function(input, output, session) {
     updateSearch(DTProxy5, keywords = list(global = input$search, columns = NULL))
     updateSearch(DTProxy6, keywords = list(global = input$search, columns = NULL))
     updateSearch(DTProxy7, keywords = list(global = input$search, columns = NULL))
+    updateSearch(DTProxy8, keywords = list(global = input$search, columns = NULL))
   })
   
   
