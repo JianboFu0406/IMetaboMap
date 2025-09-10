@@ -93,7 +93,7 @@ Metabolite–cytokine correlation meta‐analysis was performed across three coh
                             br(),
                             HTML('<div style="color:black;font-family:Calibri;font-size:20px;text-align:left;margin-top:-5px">
                                                                               <p><font color="black"><b>Citing the article:</b></font></p>
-                                                                              <p>Jianbo Fu, Nienke van Unen, Andrei Sarlea, Nhan Nguyen, Martin Jaeger, Javier Botey-Bataller, Valerie A.C.M. Koeken, L. Charlotte de Bree, Vera P. Mourits, Simone J.C.F.M. Moorlag, Godfrey Temba, Vesla I. Kullaya, Quirijn de Mast, Leo A.B. Joosten, Cheng-Jian Xu, Mihai G. Netea, Yang Li. <i> Deciphering Cross-Cohort Metabolic Signatures of Immune Responses and Their Implications in Disease Pathogenesis</i>, 2025.
+                                                                              <p>Jianbo Fu, Nienke van Unen, Andrei Sarlea, Nhan Nguyen, Martin Jaeger, Javier Botey-Bataller, Valerie A.C.M. Koeken, L. Charlotte de Bree, Vera P. Mourits, Simone J.C.F.M. Moorlag, Godfrey Temba, Vesla I. Kullaya, Quirijn de Mast, Leo A.B. Joosten, Cheng-Jian Xu, Mihai G. Netea, Yang Li.<i>Deciphering Cross-Cohort Metabolic Signatures of Immune Responses and Their Implications in Disease Pathogenesis.</i> <a href="https://www.embopress.org/doi/full/10.1038/s44320-025-00146-w" target="_blank">https://www.embopress.org/doi/full/10.1038/s44320-025-00146-w</a></p>
                                                                               </p></div>'),
                             
                             
